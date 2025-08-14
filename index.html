@@ -1,96 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Maria's Blog</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Roboto', Arial, sans-serif;
-      margin: 0;
-      background: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background: #4a90e2;
-      color: #fff;
-      padding: 2rem 0;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      font-weight: 700;
-    }
-    header p {
-      margin: 0.5rem 0 0;
-      font-size: 1.2rem;
-      font-weight: 400;
-    }
-    main {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    .post-preview {
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      margin-bottom: 2rem;
-      padding: 1.5rem;
-      transition: box-shadow 0.2s;
-    }
-    .post-preview:hover {
-      box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-    }
-    .post-preview h2 {
-      margin-top: 0;
-      font-size: 1.5rem;
-      color: #4a90e2;
-    }
-    .post-preview p {
-      margin: 0.5rem 0 0;
-      color: #555;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem 0;
-      background: #eee;
-      color: #888;
-      font-size: 0.9rem;
-    }
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      main {
-        padding: 0 0.5rem;
-      }
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BuzzerBee´s Collection</title>
+  <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/site.css" />
+  <link rel="stylesheet" href="Blog.UI.styles.css" />
 </head>
 <body>
-  <header>
-    <h1>Maria's Blog</h1>
-    <p>Insights, stories, and tutorials from a passionate developer.</p>
+  <header class="pt-3">
+    <div class="d-flex flex-row justify-content-start align-items-center">
+      <div class="d-flex align-items-center navmenu">
+        <a class="navbar-brand" href="index.html"><p class="brand" style="font-weight: bold;">BuzzerBee´s Collection</p></a>
+        <a class="navbar-brand" href="#" style="pointer-events: none"><p style="color: #6c757d;" class="navLink">RECIPIES</p></a>
+        <a class="navbar-brand" href="photografy.html"><p class="navLink">PHOTOGRAFY</p></a>
+        <a class="navbar-brand" href="#" style="pointer-events: none;"><p class="navLink" style="color: #6c757d;">DO IT YOURSELF</p></a>
+        <a class="navbar-brand" href="about.html"><p class="navLink">ABOUT ME</p></a>
+      </div>
+    </div>
+    <div class="alert info text-center">
+      <strong>Info!</strong> This website is currently under development. Please be patient while this process is ongoing.
+    </div>
   </header>
-  <main>
-    <section class="post-preview">
-      <h2>Welcome to My Blog!</h2>
-      <p>Discover articles on web development, programming tips, and personal experiences. Stay tuned for regular updates!</p>
-    </section>
-    <section class="post-preview">
-      <h2>Getting Started with HTML & CSS</h2>
-      <p>A beginner-friendly guide to building your first web page. Learn the basics of HTML structure and styling with CSS.</p>
-    </section>
-    <section class="post-preview">
-      <h2>Why I Love JavaScript</h2>
-      <p>Exploring the versatility and power of JavaScript in modern web development. Tips, tricks, and favorite resources.</p>
-    </section>
-  </main>
-  <footer>
-    &copy; 2024 Maria's Blog. All rights reserved.
-  </footer>
+  <div>
+    <main role="main">
+      <!-- Main content goes here -->
+    </main>
+  </div>
+  <div class="d-flex flex-row justify-content-around align-items-center p-2 m-0 border-top">
+    <p style="color: #393F4A;  font-size: 0.7vw;" class="nav-menu-item mb-0">&copy; 2025 - BuzzerBee´s Collection </p>
+    <p style="color: #393F4A; font-weight:bold;" class="nav-menu-item mb-0 connectText">
+      Connect with me:
+      <a href="https://www.linkedin.com/in/maria-edstr%C3%B6m-6b2215178/"><img class="connectIcon" src="icons/linkedin.png" /></a>
+      <a href="https://www.instagram.com/studio_buzzer?igsh=d2F6cHE4NDdnMW5n"><img class="connectIcon" src="icons/instagram.png" /></a>
+      <a href="https://github.com/Bumbleebeezz"><img class="connectIcon" src="icons/github.png" /></a>
+    </p>
+  </div>
+  <script src="lib/jquery/dist/jquery.min.js"></script>
+  <script src="lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/site.js"></script>
 </body>
 </html>
