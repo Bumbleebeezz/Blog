@@ -3,7 +3,7 @@ header, footer {
 }
 
 p {
-  font-family: 'jura-variablefont_wght', sans-serif;
+  font-family: "Jura", system-ui;
   color: white;
   padding: 0.5vw;
 }
@@ -18,7 +18,7 @@ strong {
   margin: 0;
   color: white;
   border: none;
-  font-family: 'jura-variablefont_wght', sans-serif;
+  font-family: "Jura", system-ui;
   padding: 0.5vw;
 }
 
@@ -32,7 +32,7 @@ strong {
 }
 
 .apologyText {
-  font-family: 'jura-variablefont_wght', sans-serif;
+  font-family: "Jura", system-ui;
   font-size: 0.7vw;
   background-color: #ea2b1f;
   border-radius: 10px;
@@ -49,7 +49,7 @@ strong {
   width: 5.5vw;
   border-radius: 50px;
   color: #393F4A;
-  font-family: 'jura-variablefont_wght', sans-serif;
+ font-family: "Jura", system-ui;
   font-weight: bold;
   padding: 0.2vw;
   font-size: 0.6vw;
@@ -58,7 +58,7 @@ strong {
 .btn:hover {
   background-color: white;
   color: #393F4A;
-  font-family: 'jura-variablefont_wght', sans-serif;
+  font-family: "Jura", system-ui;
   font-weight: bold;
 }
 
@@ -83,7 +83,7 @@ strong {
 }
 
 .card-title {
-  font-family: 'jura-variablefont_wght', sans-serif;
+  font-family: "Jura", system-ui;
   font-size: 1vw;
 }
 
@@ -110,7 +110,7 @@ strong {
 
 .categoryName {
   color: #393F4A;
-  font-family: 'dynapuff-variablefont_wdth,wght', sans-serif;
+  font-family: "DynaPuff", system-ui;
   font-size: 0.8vw;
 }
 
@@ -120,7 +120,7 @@ strong {
   padding-left: 2.5em;
   padding-right: 2.5em;
   padding-top: 3em;
-  font-family: 'jura-variablefont_wght', sans-serif;
+  font-family: "Jura", system-ui;
 }
 
 .filterMenuIcon {
@@ -135,7 +135,7 @@ strong {
   color: #393F4A;
   font-size: 1.5vw;
   margin: 0;
-  font-family: 'dynapuff-variablefont_wdth,wght', sans-serif;
+  font-family: "DynaPuff", system-ui;
 }
 
 .flex-container {
@@ -153,7 +153,7 @@ strong {
 
 .latestTitle {
   color: white;
-  font-family: 'jura-variablefont_wght', sans-serif;
+  font-family: "Jura", system-ui;
   font-size: 1.5vw;
 }
 
@@ -209,13 +209,13 @@ strong {
 }
 
 .modal-title {
-  font-family: 'jura-variablefont_wght', sans-serif;
+  font-family: "Jura", system-ui;
   font-size: 1.5vw;
   color: #393F4A;
 }
 
 .modal-text, li {
-  font-family: 'jura-variablefont_wght', sans-serif;
+  font-family: "Jura", system-ui;
   font-size: 1vw;
   color: #393F4A;
 }
@@ -296,13 +296,6 @@ strong {
   margin: 0.7vw;
 }
 
-/* .newsBtn {
-  padding: 0;
-  margin: 0;
-  margin-left: 3.3em;
-  font-size: 1vw;
-} */
-
 .profilHalfImg {
   width: 10vw;
   padding-right: 1vw;
@@ -356,31 +349,27 @@ strong {
   font-size: 1.5vw;
   padding-top: 3vw;
   margin: 0;
-  font-family: 'dynapuff-variablefont_wdth,wght', sans-serif;
+  font-family: "DynaPuff", system-ui;
 }
 
 .welcomeHeader {
-  font-size: 1vw;
+  font-family: "DynaPuff", system-ui;
   margin-bottom: 0;
   padding-bottom: 0;
   padding-top: 0;
+  font-weight:bold; 
+  font-size : 3vw;
+}
+.welcomeText {
+  font-family: "Jura", system-ui;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  padding-top: 0;
+  font-size : 1vw;
 }
 
-@font-face {
-  font-family: 'jura-variablefont_wght';
-  src: url('../fonts/jura-variablefont_wght.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'dynapuff-variablefont_wdth,wght';
-  src: url('../fonts/dynapuff-variablefont_wdth,wght.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'macondo-regular';
-  src: url('../fonts/macondo-regular.ttf') format('truetype');
-}
-
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
 
 ul {
