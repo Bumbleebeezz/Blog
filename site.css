@@ -368,15 +368,12 @@ strong {
   font-size : 1vw;
 }
 
-body {
-  font-family: 'Source Sans Pro',Helvetica Neue,Helvetica,Arial,sans-serif; 
-  font-size: 16px;
-  line-height: 1.75;
-}
+
 
 #timeline {
   display: flex;
-  background-color: #031625;
+      background: linear-gradient(to top, #393F4A 1%,#ffffff 100%);
+
 
   &:hover {
     .tl-item {
@@ -389,8 +386,7 @@ body {
   transform: translate3d(0, 0, 0);
   position: relative;
   width: 20%;
-  height: 80vh;
-  min-height: 600px;
+  height: 50vh;
   color: #fff;
   overflow: hidden;
   transition: width 0.5s ease;
@@ -404,16 +400,16 @@ body {
   }
 
   &:after {
-    background: transparentize(#031625, 0.15);
+    background: transparentize(white, 0.15);
     opacity: 1;
     transition: opacity 0.5s ease;
   }
 
   &:before {
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 75%);
+    background: linear-gradient(to bottom, #393F4A 1%,#ffffff 100%);
     z-index: 1;
     opacity: 0;
-    transform: translate3d(0, 0, 0) translateY(50%);
+    transform: translate3d(0, 0, 0) translateY(100%);
     transition: opacity 0.5s ease, transform 0.5s ease;
   }
 
@@ -448,32 +444,41 @@ body {
   z-index: 1;
   text-align: center;
   margin: 1vw;
-  top: 55%;
+  top: 25%;
   opacity: 0;
   
   h1 {
-    font-family: 'Pathway Gothic One',Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-family: "Jura", system-ui;
     text-transform: uppercase;
-    color: #D27D2D;
+    color: white;
     font-size: 1.3vw;
-    font-weight: normal;
+    font-weight: bold;
+  }
+  p{
+    color: #393F4A;
+    font-size: 0.8vw;
+    font-weight: bold;
+
   }
 }
 
 .tl-year {
   position: absolute;
-  top: 50%;
+  top: 15%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   z-index: 1;
-  border-bottom: 1px solid #fff;
-  border-top: 1px solid #fff;
+  background-color: #393F4A;
+  border-radius: 50px;
   
   p {
-    font-family: 'Pathway Gothic One',Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-family: "Jura", system-ui;
     font-size: 1.5vw;
     line-height: 0;
-    padding: 1vw;
+    margin : 0;
+    color: white;
+    padding : 1.5vw;
+    font-weight: bold;
   }
 }
 
