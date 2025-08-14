@@ -347,7 +347,8 @@ strong {
   font-size: 1.5vw;
   padding-top: 3vw;
   margin: 0;
-  font-family: "DynaPuff", system-ui;
+  font-family: "Jura", system-ui;
+  font-weight: bold;
 }
 
 
@@ -386,7 +387,7 @@ strong {
   transform: translate3d(0, 0, 0);
   position: relative;
   width: 20%;
-  height: 50vh;
+  height: 40vh;
   color: #fff;
   overflow: hidden;
   transition: width 0.5s ease;
@@ -406,7 +407,7 @@ strong {
   }
 
   &:before {
-    background: linear-gradient(to bottom, #393F4A 1%,#ffffff 100%);
+    background: linear-gradient(to bottom, #ffffff 1%,#ffffff 100%);
     z-index: 1;
     opacity: 0;
     transform: translate3d(0, 0, 0) translateY(100%);
@@ -450,9 +451,10 @@ strong {
   h1 {
     font-family: "Jura", system-ui;
     text-transform: uppercase;
-    color: white;
+    color: #393F4A;
     font-size: 1.3vw;
     font-weight: bold;
+    border-bottom: #D27D2D 2px solid;
   }
   p{
     color: #393F4A;
@@ -472,13 +474,12 @@ strong {
   border-radius: 50px;
   
   p {
-    font-family: "Jura", system-ui;
+    font-family: "DynaPuff", system-ui;
     font-size: 1.5vw;
     line-height: 0;
     margin : 0;
     color: white;
     padding : 1.5vw;
-    font-weight: bold;
   }
 }
 
