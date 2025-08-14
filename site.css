@@ -388,8 +388,8 @@ body {
 .tl-item {
   transform: translate3d(0, 0, 0);
   position: relative;
-  width: 25%;
-  height: 100vh;
+  width: 20%;
+  height: 80vh;
   min-height: 600px;
   color: #fff;
   overflow: hidden;
@@ -447,15 +447,15 @@ body {
   position: relative;
   z-index: 1;
   text-align: center;
-  margin: 0 1.618em;
+  margin: 1vw;
   top: 55%;
   opacity: 0;
   
   h1 {
     font-family: 'Pathway Gothic One',Helvetica Neue,Helvetica,Arial,sans-serif;
     text-transform: uppercase;
-    color: #1779cf;
-    font-size: 1.44rem;
+    color: #D27D2D;
+    font-size: 1.3vw;
     font-weight: normal;
   }
 }
@@ -467,11 +467,13 @@ body {
   transform: translateX(-50%) translateY(-50%);
   z-index: 1;
   border-bottom: 1px solid #fff;
+  border-top: 1px solid #fff;
   
   p {
     font-family: 'Pathway Gothic One',Helvetica Neue,Helvetica,Arial,sans-serif;
-    font-size: 1.728rem;
+    font-size: 1.5vw;
     line-height: 0;
+    padding: 1vw;
   }
 }
 
