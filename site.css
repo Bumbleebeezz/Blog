@@ -18,12 +18,10 @@ strong {
   padding-right: 1em;
 }
 
-
-
 .aboutMeDiv {
-  padding-top: 8em;
-  padding-left: 25em;
-  padding-right: 25em;
+  padding-top: 7vh;
+  padding-left: 20vw;
+  padding-right: 20vw;
   background-color: #393F4A;
   align-items: end;
   max-height: 780px;
@@ -41,25 +39,6 @@ strong {
   color: white;
   font-size: 1.1vw;
 }
-
-.btn {
-  background-color: #D27D2D;
-  width: 5.5vw;
-  border-radius: 50px;
-  color: #393F4A;
- font-family: "Jura", system-ui;
-  font-weight: bold;
-  padding: 0.2vw;
-  font-size: 0.6vw;
-}
-
-.btn:hover {
-  background-color: white;
-  color: #393F4A;
-  font-family: "Jura", system-ui;
-  font-weight: bold;
-}
-
 .badge {
   background-color: red;
   color: white;
@@ -74,34 +53,28 @@ strong {
   width: 15%;
   margin: 2vw;
 }
-
 .cardIcon {
   justify-self: center;
   align-self: center;
 }
-
 .card-title {
   font-family: "Jura", system-ui;
   font-size: 1vw;
 }
-
 .card-text {
   font-size: 0.7vw;
   color: #393F4A;
 }
-
 .connectIcon {
   width: 1.5vw;
   margin-left: 1em;
   transition: all 0.2s ease-in-out;
   border-radius: 50%;
 }
-
 .connectIcon:hover {
   color: #393F4A;
   box-shadow: 0 0 10px;
 }
-
 .connectText {
   font-size: 0.7vw;
 }
@@ -112,29 +85,6 @@ strong {
   font-size: 0.8vw;
 }
 
-.filterMenu {
-  width: 15vw;
-  height: 90vh;
-  padding-left: 2.5em;
-  padding-right: 2.5em;
-  padding-top: 3em;
-  font-family: "Jura", system-ui;
-}
-
-.filterMenuIcon {
-  width: 2vw;
-  height: 2vw;
-  display: flex;
-  justify-self: center;
-  align-self: center;
-}
-
-.filterTitle {
-  color: #393F4A;
-  font-size: 1.5vw;
-  margin: 0;
-  font-family: "DynaPuff", system-ui;
-}
 
 .flex-container {
   display: flex;
@@ -190,37 +140,6 @@ strong {
   font-size: 1.5vw;
 }
 
-.modal {
-  width: 100vw;
-}
-
-.modalBtn {
-  background-color: transparent;
-  color: #393F4A;
-  font-size: 0.8vw;
-  width: 100%;
-}
-
-.modalBtn:hover {
-  color: #D27D2D;
-  text-decoration: none;
-}
-
-.modal-title {
-  font-family: "Jura", system-ui;
-  font-size: 1.5vw;
-  color: #393F4A;
-}
-
-.modal-text, li {
-  font-family: "Jura", system-ui;
-  font-size: 1vw;
-  color: #393F4A;
-}
-
-.modalImg {
-  width: 20vw;
-}
 
 .navLink {
   font-weight: bold;
@@ -295,7 +214,7 @@ strong {
 }
 
 .profilHalfImg {
-  width: 10vw;
+  width: 12vw;
   padding-right: 1vw;
 }
 
@@ -315,12 +234,6 @@ strong {
 .profilInfo {
   font-size: 0.8vw;
   padding-top: 0.5vw;
-}
-
-.printBtn {
-  background-color: transparent;
-  width: 1vw;
-  padding: 2%;
 }
 
 .photo {
@@ -350,27 +263,6 @@ strong {
   font-family: "Jura", system-ui;
   font-weight: bold;
 }
-
-
-
-.welcomeHeader {
-  font-family: "DynaPuff", system-ui;
-  margin-bottom: 0;
-  padding-bottom: 0;
-  padding-top: 0;
-  font-weight:bold; 
-  font-size : 3vw;
-}
-.welcomeText {
-  font-family: "Jura", system-ui;
-  margin-bottom: 0;
-  padding-bottom: 0;
-  padding-top: 0;
-  font-size : 1vw;
-}
-
-
-
 #timeline {
   display: flex;
       background: linear-gradient(to top, #393F4A 1%,#ffffff 100%);
@@ -493,4 +385,25 @@ strong {
   transition: filter 0.5s ease;
   filter: grayscale(100%);
 }
+
+
+.welcomeHeader {
+  font-family: "DynaPuff", system-ui;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  padding-top: 0;
+  font-weight:bold; 
+  font-size : 3vw;
+}
+.welcomeText {
+  font-family: "Jura", system-ui;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  padding-top: 0;
+  font-size : 1vw;
+}
+
+
+
+
 
