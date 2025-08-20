@@ -49,7 +49,7 @@ strong {
 
 .card {
   border: 1px solid #f5f3f4;
-  border-radius: 10px;
+  border-radius: 5px;
   width: 15%;
   margin: 2vw;
 }
@@ -72,7 +72,7 @@ strong {
   border-radius: 50%;
 }
 .connectIcon:hover {
-  color: #393F4A;
+  color: #D27D2D;
   box-shadow: 0 0 10px;
 }
 .connectText {
@@ -167,7 +167,7 @@ strong {
 
 .navIcon:hover {
   color: #D27D2D;
-  box-shadow: 0 0 100px;
+  box-shadow: 0 0 50px;
 }
 
 .newsDiv {
@@ -265,7 +265,7 @@ strong {
 }
 #timeline {
   display: flex;
-      background: linear-gradient(to top, #393F4A 1%,#ffffff 100%);
+      background: linear-gradient(to top, #393F4A 1%,#ffffff 70%);
 
 
   &:hover {
@@ -363,10 +363,12 @@ strong {
   transform: translateX(-50%) translateY(-50%);
   z-index: 1;
   background-color: #393F4A;
-  border-radius: 50px;
+  width: 100%;
+  text-align: center  ;
   
   p {
-    font-family: "DynaPuff", system-ui;
+    font-family: "Jura", system-ui;
+    font-weight: bold;
     font-size: 1.5vw;
     line-height: 0;
     margin : 0;
