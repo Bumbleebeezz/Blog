@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BuzzerBee´s Collection</title>
+  <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="site.css" />
+  <link rel="stylesheet" href="Blog.styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  <style>
+    
+    @import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap');
+    
+    .filters {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+      font-family: jura, sans-serif;
+    }
+    .filters select, .filters input {
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    li{
+      font-family: jetbrains mono, monospace;
+      font-weight: 200;
+      color: #393F4A;
+    }
+    .recipes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+      font-family: jura, sans-serif;
+      color: #393F4A;
+    }
+    .recipe-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+    .recipe-card:hover {
+      transform: translateY(-4px) scale(1.03);
+    }
+    .recipe-img {
+      width: 100%;
+      height: 180px;
+      object-fit: fill;
+      display: block;
+      margin: auto;
+    }
+    .recipe-content {
+      padding: 1rem;
+    }
+    .recipe-title {
+      font-size: 1.2rem;
+      margin: 0 0 1vw 0;
+      text-align: center;
+      border-bottom: 2px solid #D27D2D;
+      font-family: jura, sans-serif;
+    }
+    .recipe-tags {
+      font-size: 0.6vw;
+      color: #D27D2D;
+      margin-bottom: 0.5rem;
+      font-family: jura, sans-serif;
+
+    }
+    .recipe-desc {
+      font-size: 1rem;
+      font-family: jetbrains mono, monospace;
+      font-weight: 200;
+      color: #393F4A;
+    }
+  </style>
+</head>
+<body>
+  <header class="pt-3">
+    <div class="d-flex flex-row justify-content-start align-items-center">
+      <div class="d-flex align-items-center navmenu">
+        <a class="navbar-brand" href="index.html"><p class="brand" style="font-weight: bold;">BuzzerBee´s Collection</p></a>
+        <a class="navbar-brand" href="recipies.html" ><p class="navLink">RECIPIES</p></a>
+        <a class="navbar-brand" href="photografy.html"><p class="navLink">PHOTOGRAPHY</p></a>
+        <a class="navbar-brand" href="#" style="pointer-events: none;"><p class="navLink" style="color: #6c757d;">DO IT YOURSELF</p></a>
+        <a class="navbar-brand" href="#" style="pointer-events: none;"><p class="navLink" style="color: #6c757d;">TRAINING</p></a>
+        <a class="navbar-brand" href="about.html"><p class="navLink">ABOUT ME</p></a>
+      </div>
+    </div>
+    <div class="text-center" style="font-size: 0.8vw; background-color:  rgb(58, 131, 144); color: white;  padding: 0.5rem; margin-top: 1rem;">
+      <strong>Info!</strong> This website is currently under development. Please be patient while this process is ongoing.
+    </div>
+  </header>
+  <section class="filters">
+    <select id="categoryFilter">
+      <option value="">All Categories</option>
+      <option value="Base">Base</option>
+      <option value="Bread">Bread</option>
+      <option value="Cake">Cake</option>
+      <option value="Chocolate">Chocolate</option>
+      <option value="Cookies">Cookies</option>
+      <option value="Filling">Filling</option>
+    </select>
+    <input type="text" id="ingredientFilter" placeholder="Filter by ingredient...">
+    <input type="text" id="searchFilter" placeholder="Search by name...">
+  </section>
+  <section class="recipes" id="recipesList">
+    <!-- Recipe cards will be injected here -->
+  </section>
+  <script>
+    const recipes = [
+      {
+        title: "Scones",
+        category: "Bread",
+        ingredients: ["3 dl grahamflour", "5 dl flour", "3 tsp baking powder", "1 tsp salt", "50 g butter", "4 dl milk"],
+        description: "In a bowl, mix all the dry ingredients together. Add the butter and milk, then stir until just combined. Shape the dough as desired. Place on a baking tray and bake in the center of a preheated oven at 200°C (392°F) for 10 minutes.",
+        tags: ["Bread"]
+      },
+      {
+        title: "Caramel slices/cookies",
+        category: "Cookies",
+        ingredients: ["200g butter", "200g sugar", "300g flour", "10g baking powder", "18g vanilla sugar", "40g syrup"],
+        description: "Mix all ingredients together to form a smooth dough. Shape the dough as desired, either into separate round cookies or into lengths. Place on a baking sheet and bake in the middle of the oven at 180°C (356°F) for 7 to 10 minutes. If making lengths: cut them into slices immediately after removing them from the oven, while still warm.",
+        tags: ["Cookies"]
+      },
+      {
+        title: "Cake base",
+        category: "Cake",
+        ingredients: ["200g egg", "100g sugar", "100g flour", "2.5g baking powder", "5g vanilla sugar"],
+        description: "Beat the eggs and sugar together until the mixture is pale and very fluffy. Gently fold in the sifted flour, vanilla sugar, and baking powder. Pour the batter into a baking tin of choice, lined with baking paper. Bake in the center of the oven at 200°C (392°F) until fully baked (check with a toothpick or cake tester).",
+        tags: ["Cake", "Base"]
+      },
+      {
+        title: "Vanilla sauce/custard",
+        category: "Filling",
+        ingredients: ["500g milk", "130g sugar", "1 vanilla pod", "120g egg yolk", "0.5 tsp salt", "20-40g corn starch", "30g butter"],
+        description: "In a saucepan, combine all ingredients except the butter. Adjust the amount of cornstarch depending on the desired consistency: Use less for a thinner texture (e.g. for pie), Use more for a thicker texture (e.g. for filling). Cook the vanilla mixture over medium to high heat, stirring constantly to prevent the eggs from scrambling. Once the mixture begins to thicken, continue to cook for another 2–3 minutes, still stirring. Remove the saucepan from the heat. Take out the vanilla bean (if used), then stir in the butter until fully melted and incorporated. Serve warm, or let cool and store in the refrigerator.",
+        tags: ["Filling", "Base"]
+      },
+      {
+        title: "Chocolate balls",
+        category: "Cookies",
+        ingredients: ["250g oats", "250g sugar", "250g butter", "a double esspresso", "4g vanilla sugar", "0.5 tsp salt", "25g cocoa powder", "coconut flakes (coating)", "melted chocolate (coating)"],
+        description: "Mix together all ingredients except the coating. Shape into small balls and place on a baking sheet and refrigerate to harden. Coat with melted chocolate and roll in coconut flakes.",
+        tags: ["Cookies","Chocolate"]
+      },
+      {
+        title: "Teacake",
+        category: "Bread",
+        ingredients: ["100g water", "1800g flour", "300g butter", "300g sugar", "100g yest", "30g salt"],
+        description: "Add all ingredients except salt on low speed in a mixer for 5 minutes. Add salt and mix on medium-high speed for another 5 minutes. Let the dough rise for 60-90 minutes. Roll out the dough and shape into cirkles, about 1 cm thick and poke a few holes with a fork. Let rise for another 30-60 minutes. Bake in the middle of the oven at 220°C (428°F) for 7-10 minutes.",
+        tags: ["Bread"]
+      }
+    ];
+
+    function renderRecipes(filtered) {
+      const container = document.getElementById('recipesList');
+      container.innerHTML = '';
+      if (filtered.length === 0) {
+        container.innerHTML = '<p style="grid-column: 1/-1; text-align:center;">No recipes found.</p>';
+        return;
+      }
+      filtered.forEach(recipe => {
+  container.innerHTML += `
+    <div class="recipe-card">
+      <div class="recipe-content">
+        <div class="recipe-tags">${recipe.tags.join(', ')}</div>
+        <div class="recipe-title"><strong>${recipe.title}</strong></div>
+        <div class=" mb-5"><strong>INGREDIENTS:</strong>
+          <ul class="recipe-ingredients" style="list-style-type: none;">
+            ${recipe.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
+          </ul>
+        </div>
+        <div><strong>DESCRIPTION:</strong>
+          <p class="recipe-desc">${recipe.description}</p>
+          </div>
+      </div>
+    </div>
+  `;
+});
+    }
+
+    function filterRecipes() {
+      const category = document.getElementById('categoryFilter').value;
+      const ingredient = document.getElementById('ingredientFilter').value.toLowerCase();
+      const search = document.getElementById('searchFilter').value.toLowerCase();
+
+      const filtered = recipes.filter(recipe => {
+        const matchesCategory = !category || recipe.category === category || recipe.tags.includes(category);
+        const matchesIngredient = !ingredient || recipe.ingredients.some(i => i.toLowerCase().includes(ingredient));
+        const matchesSearch = !search || recipe.title.toLowerCase().includes(search);
+        return matchesCategory && matchesIngredient && matchesSearch;
+      });
+
+      renderRecipes(filtered);
+    }
+
+    document.getElementById('categoryFilter').addEventListener('change', filterRecipes);
+    document.getElementById('ingredientFilter').addEventListener('input', filterRecipes);
+    document.getElementById('searchFilter').addEventListener('input', filterRecipes);
+
+    // Initial render
+    renderRecipes(recipes);
+  </script>
+</body>
+</html>
