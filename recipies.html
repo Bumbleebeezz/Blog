@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,93 +18,210 @@
     @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap');
     
-    .filters {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      margin: 2rem 0;
-      flex-wrap: wrap;
-      font-family: jura, sans-serif;
-    }
-    .filters select, .filters input {
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-    }
-    li{
-      font-family: jetbrains mono, monospace;
-      font-weight: 200;
-      color: #393F4A;
-    }
-    .recipes {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      padding: 2rem;
-      max-width: 1200px;
-      margin: auto;
-      font-family: jura, sans-serif;
-      color: #393F4A;
-    }
-    .recipe-card {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-      overflow: hidden;
-      transition: transform 0.2s;
-    }
-    .recipe-card:hover {
-      transform: translateY(-4px) scale(1.03);
-    }
-    .recipe-img {
-      width: 100%;
-      height: 180px;
-      object-fit: fill;
-      display: block;
-      margin: auto;
-    }
-    .recipe-content {
-      padding: 1rem;
-    }
-    .recipe-title {
-      font-size: 1.2rem;
-      margin: 0 0 1vw 0;
-      text-align: center;
-      border-bottom: 2px solid #D27D2D;
-      font-family: jura, sans-serif;
-    }
-    .recipe-tags {
-      font-size: 0.6vw;
-      color: #D27D2D;
-      margin-bottom: 0.5rem;
-      font-family: jura, sans-serif;
+html, body {
+  min-width: 400px;
+}
+.container-fluid {
+  padding-left: 5em;
+  padding-right: 5em;
+}
 
-    }
-    .recipe-desc {
-      font-size: 1rem;
-      font-family: jetbrains mono, monospace;
-      font-weight: 200;
-      color: #393F4A;
-    }
+    .filters {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+  font-family: jura, sans-serif;
+}
+.filters select,
+.filters input {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+li {
+  font-family: jetbrains mono, monospace;
+  font-weight: 200;
+  color: #393F4A;
+}
+
+.recipes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  font-family: jura, sans-serif;
+  color: #393F4A;
+}
+
+.recipe-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+.recipe-card:hover {
+  transform: translateY(-4px) scale(1.03);
+}
+
+.recipe-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover; /* prevents distortion */
+  display: block;
+  margin: auto;
+}
+
+.recipe-content {
+  padding: 1rem;
+}
+
+.recipe-title {
+  font-size: 1.2rem;
+  margin: 0 0 1rem 0;
+  text-align: center;
+  border-bottom: 2px solid #D27D2D;
+  font-family: jura, sans-serif;
+}
+
+.recipe-tags {
+  font-size: 0.8rem; /* readable on all devices */
+  color: #D27D2D;
+  margin-bottom: 0.5rem;
+  font-family: jura, sans-serif;
+}
+
+.recipe-desc {
+  font-size: 1rem;
+  font-family: jetbrains mono, monospace;
+  font-weight: 200;
+  color: #393F4A;
+}
+.brand {
+  font-size: 1rem;
+  margin: 0;
+}
+/* Navigation fixes */
+.navmenu {
+  flex-wrap: wrap; /* allows wrapping on small screens */
+  gap: 1rem;
+}
+
+
+.navbar{
+  padding: 0;
+  padding-top: 20em;
+}
+.navbar-toggler {
+  border: none;
+}
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.navbar-brand {
+  font-family: "Jura", system-ui;
+  font-size: 1.2rem;
+  color: white;
+  font-weight: bold;
+}
+.navbar-brand:hover {
+  color: white;
+}
+
+.nav-link {
+  font-family: 'Jura', sans-serif;
+  font-weight: 500;
+  color: white !important;
+}
+
+.nav-link:hover {
+  color: #D27D2D !important;
+}
+
+.nav-link.disabled {
+  color: #6c757d !important;
+  pointer-events: none;
+}
+
+
+/* Info banner */
+header .text-center {
+  font-size: 0.9rem; 
+  background-color: rgb(58, 131, 144);
+  color: white;
+  padding: 0.5rem;
+  margin-top: 1rem;
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+/* Footer */
+footer {
+  font-size: 0.85rem;
+  padding: 1rem;
+  border-top: 1px solid #ccc;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  background-color: transparent;
+  
+}
   </style>
 </head>
 <body>
-  <header class="pt-3">
-    <div class="d-flex flex-row justify-content-start align-items-center">
-      <div class="d-flex align-items-center navmenu">
-        <a class="navbar-brand" href="index.html"><p class="brand" style="font-weight: bold;">BuzzerBee´s Collection</p></a>
-        <a class="navbar-brand" href="recipies.html" ><p class="navLink">RECIPIES</p></a>
-        <a class="navbar-brand" href="photografy.html"><p class="navLink">PHOTOGRAPHY</p></a>
-        <a class="navbar-brand" href="#" style="pointer-events: none;"><p class="navLink" style="color: #6c757d;">DO IT YOURSELF</p></a>
-        <a class="navbar-brand" href="#" style="pointer-events: none;"><p class="navLink" style="color: #6c757d;">TRAINING</p></a>
-        <a class="navbar-brand" href="about.html"><p class="navLink">ABOUT ME</p></a>
+  <header class="pt-2">
+  <nav class="navbar navbar-expand-lg py-2 ">
+    <div class="container-fluid">
+      <!-- Brand -->
+      <a class="navbar-brand" href="index.html">BuzzerBee´s Collection</a>
+
+      <!-- Hamburger toggle (mobile) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" 
+        aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapsible menu -->
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+          <li class="nav-item">
+            <a class="nav-link" href="recipies.html">RECIPIES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="photografy.html">PHOTOGRAPHY</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">DO IT YOURSELF</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">TRAINING</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">ABOUT ME</a>
+          </li>
+        </ul>
       </div>
     </div>
-    <div class="text-center" style="font-size: 0.8vw; background-color:  rgb(58, 131, 144); color: white;  padding: 0.5rem; margin-top: 1rem;">
-      <strong>Info!</strong> This website is currently under development. Please be patient while this process is ongoing.
-    </div>
-  </header>
+  </nav>
+
+  <!-- Info banner -->
+  <div class="text-center text-white" style="background-color: rgb(58, 131, 144); font-size: 0.9rem;">
+    <strong>Info!</strong> This website is currently under development. Please be patient while this process is ongoing.
+  </div>
+</header>
   <section class="filters">
     <select id="categoryFilter">
       <option value="">All Categories</option>
@@ -121,6 +238,10 @@
   <section class="recipes" id="recipesList">
     <!-- Recipe cards will be injected here -->
   </section>
+  <!-- Footer -->
+<footer>
+    <p style="color: #393F4A;">version 2.1   &copy; 2025 - BuzzerBee´s Collection</p>
+  </footer>
   <script>
     const recipes = [
       {

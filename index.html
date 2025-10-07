@@ -14,107 +14,371 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </head>
 
+<style>
+ @import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap');
+  
 
+ html, body {
+  min-width: 400px;
+}
+.badge {
+  background-color: red;
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  border-radius: 5px;
+}
+.container-fluid {
+  padding-left: 5em;
+  padding-right: 5em;
+}
+
+.mainHeaderText {
+  align-self: center;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+}
+
+.mainNavText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5vw;
+}
+
+
+.newsPostTitle {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-family: "Jura", sans-serif;
+}
+
+.newsText {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #393F4A;
+}
+
+.newsImg {
+  max-width: 100%;
+  height: auto;
+}
+.navbar{
+  padding: 0;
+  padding-top: 20em;
+}
+.navbar-toggler {
+  border: none;
+}
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.navbar-brand {
+  font-family: "Jura", system-ui;
+  font-size: 1.2rem;
+  color: white;
+  font-weight: bold;
+}
+.navbar-brand:hover {
+  color: white;
+}
+
+.nav-link {
+  font-family: 'Jura', sans-serif;
+  font-weight: 500;
+  color: white !important;
+}
+
+.nav-link:hover {
+  color: #D27D2D !important;
+}
+
+.nav-link.disabled {
+  color: #6c757d !important;
+  pointer-events: none;
+}
+
+.badge{
+  background-color: #D27D2D !important;
+}
+.newsBadge{
+  padding: 0.5rem 3rem !important;
+}
+
+/* Info banner */
+header .text-center {
+  font-size: 0.9rem; 
+  color: white;
+  padding: 0.5rem;
+  margin-top: 1rem;
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+
+/* ========== HEADER SECTION ========== */
+header.main {
+  color: white;
+  border-radius: 0;
+  padding: 4rem 1rem;
+  box-shadow: 0 3px 10px #393F4A;
+}
+
+header .welcomeHeader {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  animation: fadeInDown 1s ease;
+}
+
+header .welcomeText {
+  font-size: 1.3rem;
+  font-weight: bold;
+  max-width: 900px;
+  margin: auto;
+  opacity: 0.9;
+  animation: fadeInUp 1.2s ease;
+}
+
+/* Fade animations */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========== ICONS ========== */
+.navIcon {
+  max-width: 120px;
+  width: 100%;
+  border-radius: 50%;
+  background-color: transparent;
+  box-shadow: 10px white;
+  cursor: pointer;
+}
+
+.grayscale {
+  filter: grayscale(100%);
+  opacity: 0.6;
+}
+
+/* ========== NEWS SECTION ========== */
+.newsTitle {
+  font-family: "Jura", sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  display: inline-block;
+  margin: 0.5em;
+  color: #393F4A;
+}
+
+.newsPost {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 5px #393F4A;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  margin : 1rem;
+}
+
+.newsPostTitle {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #393F4A;
+  font-size: 1.5em;
+}
+
+.newsText small {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* Images in posts */
+.newsImg {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 2px 4px #393F4A);
+  border-radius: 10px;
+}
+/* Footer */
+footer {
+  font-size: 0.85rem;
+  padding: 1rem;
+  border-top: 1px solid #ccc;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  background-color: transparent;
+  
+}
+
+</style>
 
 <body>
-  <header class="pt-3">
-    <div class="d-flex flex-row justify-content-start align-items-center">
-      <div class="d-flex align-items-center navmenu">
-        <a class="navbar-brand" href="index.html"><p class="brand" style="font-weight: bold;">BuzzerBee´s Collection</p></a>
-        <a class="navbar-brand" href="recipies.html" ><p class="navLink">RECIPIES</p></a>
-        <a class="navbar-brand" href="photografy.html"><p class="navLink">PHOTOGRAPHY</p></a>
-        <a class="navbar-brand" href="#" style="pointer-events: none;"><p class="navLink" style="color: #6c757d;">DO IT YOURSELF</p></a>
-        <a class="navbar-brand" href="#" style="pointer-events: none;"><p class="navLink" style="color: #6c757d;">TRAINING</p></a>
-        <a class="navbar-brand" href="about.html"><p class="navLink">ABOUT ME</p></a>
+  <header class="pt-2">
+  <nav class="navbar navbar-expand-lg py-2 ">
+    <div class="container-fluid">
+      <!-- Brand -->
+      <a class="navbar-brand" href="index.html">BuzzerBee´s Collection</a>
+
+      <!-- Hamburger toggle (mobile) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" 
+        aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapsible menu -->
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+          <li class="nav-item">
+            <a class="nav-link" href="recipies.html">RECIPIES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="photografy.html">PHOTOGRAPHY</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">DO IT YOURSELF</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">TRAINING</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">ABOUT ME</a>
+          </li>
+        </ul>
       </div>
     </div>
-    <div class="text-center" style="font-size: 0.8vw; background-color:  rgb(58, 131, 144); color: white;  padding: 0.5rem; margin-top: 1rem;">
-      <strong>Info!</strong> This website is currently under development. Please be patient while this process is ongoing.
-    </div>
-  </header>
+  </nav>
+
+  <!-- Info banner -->
+  <div class="text-center text-white" style="background-color: rgb(58, 131, 144); font-size: 0.9rem;">
+    <strong>Info!</strong> This website is currently under development. Please be patient while this process is ongoing.
+  </div>
+</header>
   <div>
     <main role="main">
       <body class="mb-5">
-  <header class="main">
-    <div class="flex-container text-center">
-      <div class="mainHeaderText">
-        <p class="welcomeHeader">
-          Hello World !
-        </p>
-        <p class="welcomeText">
-          Jump into 4 unique collections of stunning photos, upcoming recipes, training stuff and creative DIYs!
-        </p>
-      </div>
+  <header class="main py-5 text-center">
+  <div class="container">
+    <div class="mainHeaderText">
+      <p class="welcomeHeader h2">Hello World !</p>
+      <p class="welcomeText lead">
+        Jump into 4 unique collections of stunning photos, tasty recipes,
+         upcoming training stuff and creative DIYs!
+      </p>
     </div>
-  </header>
-
-  <div class="container d-flex justify-content-evenly mainBody">
-    <a class="navbar-brand d-flex justify-content-center" href="recipies.html">
-      <img  class="navIcon" src="images/icons/chef-hat.png" alt="RecipeIcon">
-    </a>
-    <a class="navbar-brand d-flex justify-content-center" href="photografy.html">
-      <img class="navIcon" src="images/icons/camera.png" alt="PhotografyIcon">
-    </a>
-    <a class="navbar-brand d-flex justify-content-center" href="#" style="pointer-events: none">
-      <img style="filter: grayscale(100%);" class="navIcon" src="images/icons/diy.png" alt="DiyIcon">
-    </a>
-    <a class="navbar-brand d-flex justify-content-center" href="#" style="pointer-events: none">
-      <img style="filter: grayscale(100%);" class="navIcon" src="images/icons/barbell.png" alt="TrainingIcon">
-    </a>
   </div>
-
-  <div class="newsDiv d-flex flex-column">
-    <p class="newsTitle">NEWS !</p>
-    <div class="newsPost d-flex">
-      <img class="newsImg d-flex align-content-center" src="images/icons/chef-hat.png" alt="chefIcon"/>
-      <div class="d-flex flex-column" style="width: 80vw;">
-        <p class="newsPostTitle">Recipies are now here! <span class="badge">New</span></p>
-        <p class="newsText">
-          <strong>Exciting News:</strong>
-          <br /> 
-          This blog now has recipes — and this is just the beginning! From sweet to savory, new deliciousness will be added regularly. So grab your apron and stay tuned… more yumminess is on the way!
-
-          <br>
-           12-09-2025
-        </p>
-      </div>
+  <!-- ICONS ROW -->
+<div class="container my-4 mt-2">
+  <div class="row text-center g-3 justify-content-center ">
+    <div class="col-3 col-sm-3 col-md-2">
+      <a href="recipies.html">
+        <img class="navIcon img-fluid" src="images/icons/chef-hat.png" alt="RecipeIcon">
+      </a>
     </div>
-    <div class="newsPost d-flex">
-      <img class="newsImg d-flex align-content-center" src="images/launchImg.png" alt="launchIcon"/>
-      <div class="d-flex flex-column" style="width: 80vw;">
-        <p class="newsPostTitle">We’re LIVE! Welcome reader </p>
-        <p class="newsText">
-          <strong>Exciting News:</strong>
-          <br /> 
-          We’re excited to announce the official launch of this brand-new website! Join this website´s journey as it develops and improves.
+    <div class="col-3 col-sm-3 col-md-2">
+      <a href="photografy.html">
+        <img class="navIcon img-fluid" src="images/icons/camera.png" alt="PhotografyIcon">
+      </a>
+    </div>
+    <div class="col-3 col-sm-3 col-md-2">
+      <a href="#" style="pointer-events: none">
+        <img class="navIcon img-fluid grayscale" src="images/icons/diy.png" alt="DiyIcon">
+      </a>
+    </div>
+    <div class="col-3 col-sm-3 col-md-2">
+      <a href="#" style="pointer-events: none">
+        <img class="navIcon img-fluid grayscale" src="images/icons/barbell.png" alt="TrainingIcon">
+      </a>
+    </div>
+  </div>
+</div>
+</header>
 
-          Explore a curated collection of inspiring photography and upcoming delicious recipes, training tips / tricks and creative DIY projects all in one, easy-to-navigate space.
 
-          Whether you're here to cook, create, or be inspired, there will be something for everyone.
 
-          <br>
-           20-08-2025
-        </p>
-      </div>
+<!-- NEWS SECTION -->
+<div class="container newsDiv mt-5">
+  <h2 class="newsTitle mb-4"><span class="newsBadge badge">News!</span></h2>
+
+  <div class="row newsPost align-items-start mb-4">
+    <div class="col-3 col-sm-2 col-md-1">
+      <img class="img-fluid" src="images/icons/newspaper.png" alt="NewsIcon">
+    </div>
+    <div class="col-9 col-sm-10 col-md-11">
+      <p class="newsPostTitle">
+        <span class="badge">New</span>
+        Improved user experience  
+      </p>
+      <p class="newsText">
+        We’re excited to share that our blog now offers an improved user experience across all devices!
+Enjoy smoother navigation, cleaner layouts for phone, tablet, and computer.
+        <br><small class="text-muted">07-10-2025</small>
+        <br><small class="text-muted">version 2.1</small>
+      </p>
+
     </div>
   </div>
 
-  
-  <script src="lib/jquery/dist/jquery.min.js"></script>
-  <script src="lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/site.js"></script>
-</body>
-    </main>
+  <div class="row newsPost align-items-start mb-4">
+    <div class="col-3 col-sm-2 col-md-1">
+      <a href="recipies.html">
+        <img class="navIcon img-fluid" src="images/icons/chef-hat.png" alt="RecipeIcon">
+      </a>
+    </div>
+    <div class="col-9 col-sm-10 col-md-11">
+      <p class="newsPostTitle">
+        Recipies are now here! 
+      </p>
+      <p class="newsText">
+        This blog now has recipes — and this is just the beginning! From sweet to savory,
+        new deliciousness will be added regularly. So grab your apron and stay tuned… 
+        more yumminess is on the way!
+        <br><small class="text-muted">12-09-2025</small>
+        <br><small class="text-muted">version 2.0</small>
+      </p>
+    </div>
   </div>
-  <div class="d-flex flex-row justify-content-around align-items-center p-2 m-0 border-top">
-    <p style="color: #393F4A;  font-size: 0.7vw;" class="nav-menu-item mb-0">&copy; 2025 - BuzzerBee´s Collection </p>
-    <p style="color: #393F4A; font-weight:bold;" class="nav-menu-item mb-0 connectText">
-      Connect with me:
-      <a href="https://www.linkedin.com/in/maria-edstr%C3%B6m-6b2215178/"><img class="connectIcon" src="images/icons/linkedin.png" /></a>
-      <a href="https://www.instagram.com/studio_buzzer?igsh=d2F6cHE4NDdnMW5n"><img class="connectIcon" src="images/icons/instagram.png" /></a>
-      <a href="https://github.com/Bumbleebeezz"><img class="connectIcon" src="images/icons/github.png" /></a>
-    </p>
+
+  <div class="row newsPost align-items-start mb-4">
+    <div class="col-3 col-sm-2 col-md-1">
+      <img class="newsImg img-fluid" src="images/launchImg.png" alt="launchIcon"/>
+    </div>
+    <div class="col-9 col-sm-10 col-md-11">
+      <p class="newsPostTitle">We’re LIVE! Welcome reader</p>
+      <p class="newsText">
+        We’re excited to announce the official launch of this brand-new website! 
+        Join this website´s journey as it develops and improves.
+        <br><br>
+        Explore a curated collection of inspiring photography and upcoming delicious recipes,
+        training tips / tricks and creative DIY projects all in one, easy-to-navigate space.
+        <br><br>
+        Whether you're here to cook, create, or be inspired, there will be something for everyone.
+        <br><small class="text-muted">20-08-2025</small>
+        <br><small class="text-muted">version 1.0</small>
+      </p>
+    </div>
   </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p style="color: #393F4A;">version 2.1   &copy; 2025 - BuzzerBee´s Collection</p>
+  </footer>
   <script src="lib/jquery/dist/jquery.min.js"></script>
   <script src="lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/site.js"></script>

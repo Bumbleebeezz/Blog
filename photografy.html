@@ -3,192 +3,424 @@
 <head>
   <meta charset="UTF-8">
   <title>Photography</title>
-  <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="site.css" />
-  <link rel="stylesheet" href="Blog.styles.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Bootstrap CSS CDN (optional, for classes used) -->
+
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap');
+
+html, body {
+min-width: 400px;
+
+}
+/* Global */
+body {
+  font-family: 'Jura', sans-serif;
+  margin: 0;
+  line-height: 1.6;
+  color: #393F4A;
+}
+header {
+  background-color: #393F4A;
+}
+
+.container-fluid {
+  padding-left: 5em;
+  padding-right: 5em;
+}
+
+.connectIcon {
+  width: 24px;
+  height: 24px;
+  margin-left: 0.5rem;
+}
+
+.categoryName {
+  font-size: 1.3rem;
+}
+
+.latestTitle {
+  color: white;
+  font-family: "Jura", system-ui;
+  font-size: 1.7rem;
+  text-align: center;
+}
+
+.mainHeaderText {
+  align-self: center;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+}
+
+.mainNavText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5vw;
+}
+.navbar{
+  padding: 0;
+  padding-top: 20em;
+}
+.navbar-toggler {
+  border: none;
+}
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.navbar-brand {
+  font-family: "Jura", system-ui;
+  font-size: 1.2rem;
+  color: white;
+  font-weight: bold;
+}
+.navbar-brand:hover {
+  color: white;
+}
+
+.nav-link {
+  font-family: 'Jura', sans-serif;
+  font-weight: 500;
+  color: white !important;
+}
+
+.nav-link:hover {
+  color: #D27D2D !important;
+}
+
+.nav-link.disabled {
+  color: #6c757d !important;
+  pointer-events: none;
+}
+
+
+/* Info banner */
+header .text-center {
+  font-size: 0.9rem; 
+  background-color: #3a8390;
+  color: white;
+  padding: 0.5rem;
+  margin-top: 1rem;
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+
+/* Footer */
+footer {
+  font-size: 0.85rem;
+  padding: 1rem;
+  border-top: 1px solid #ccc;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* ========== ICONS ========== */
+.navIcon {
+  max-width: 80px;
+  border-radius: 50%;
+  padding: 0.8rem;
+  background: white;
+  box-shadow: 0 4px 12px #393F4A;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.navIcon:hover {
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.grayscale {
+  filter: grayscale(100%);
+  opacity: 0.6;
+}
+
+/* Footer */
+footer {
+  font-size: 0.85rem;
+  padding: 1rem;
+  border-top: 1px solid #ccc;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  background-color: transparent;
   
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .profilName { font-size: 1.5rem; }
+  .profilTitle { font-size: 1.1rem; }
+  .profilInfo { font-size: 1.1rem; }
+  .profilImg { margin-bottom: 0; }
+  .latestTitle { font-size: 1.3rem;}
+  .categoryName{ font-size: 1.3rem;}
+}
+.expandable-img {
+  cursor: pointer;
+}
+
+
+/* Fullscreen overlay */
+.img-overlay {
+  display: none;
+  position: fixed;
+  z-index: 1050;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.img-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+.close-btn {
+  position: absolute;
+  top: 2rem;
+  right: 3rem;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: #ccc;
+}
+
+  </style>
 </head>
 <body>
-  <header class="pt-3">
-    <div class="d-flex flex-row justify-content-start align-items-center">
-      <div class="d-flex align-items-center navmenu">
-        <a class="navbar-brand" href="index.html"><p class="brand" style="font-weight: bold;">BuzzerBee´s Collection</p></a>
-        <a class="navbar-brand" href="recipies.html" ><p class="navLink">RECIPIES</p></a>
-        <a class="navbar-brand" href="photografy.html"><p class="navLink">PHOTOGRAPHY</p></a>
-        <a class="navbar-brand" href="#" style="pointer-events: none;"><p class="navLink" style="color: #6c757d;">DO IT YOURSELF</p></a>
-        <a class="navbar-brand" href="#" style="pointer-events: none;"><p class="navLink" style="color: #6c757d;">TRAINING</p></a>
-        <a class="navbar-brand" href="about.html"><p class="navLink">ABOUT ME</p></a>
+
+<header class="pt-2">
+  <nav class="navbar navbar-expand-lg py-2 ">
+    <div class="container-fluid">
+      <!-- Brand -->
+      <a class="navbar-brand" href="index.html">BuzzerBee´s Collection</a>
+
+      <!-- Hamburger toggle (mobile) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" 
+        aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapsible menu -->
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+          <li class="nav-item">
+            <a class="nav-link" href="recipies.html">RECIPIES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="photografy.html">PHOTOGRAPHY</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">DO IT YOURSELF</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">TRAINING</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">ABOUT ME</a>
+          </li>
+        </ul>
       </div>
     </div>
-    <div class="text-center" style="font-size: 0.8vw; background-color:  rgb(58, 131, 144); color: white;  padding: 0.5rem; margin-top: 1rem;">
-      <strong>Info!</strong> This website is currently under development. Please be patient while this process is ongoing.
+  </nav>
+
+  <!-- Info banner -->
+  <div class="text-center text-white" style="background-color: rgb(58, 131, 144); font-size: 0.9rem;">
+    <strong>Info!</strong> This website is currently under development. Please be patient while this process is ongoing.
+  </div>
+</header>
+
+<!-- Latest photos -->
+<section style="background-color: #393F4A;" class="p-5">
+  <p class="latestTitle border-bottom text-center text-white mb-4">- - - Latest photos - - -</p>
+  <div class="container">
+    <div class="row g-4 align-items-center justify-content-center">
+      <div class="col-12 col-md-4 d-flex justify-content-center align-items-center">
+        <div class="card border-0 bg-transparent d-flex justify-content-center align-items-center">
+          <img src="images/photos/CJ5A1743.JPG" class="card-img-top expandable-img" alt="">
+        </div>
+      </div>
+      <div class="col-12 col-md-4 d-flex justify-content-center align-items-center">
+        <div class="card border-0 bg-transparent d-flex justify-content-center align-items-center">
+          <img src="images/photos/CJ5A3202.JPG" class="card-img-top expandable-img" alt="">
+        </div>
+      </div>
     </div>
-  </header>
-  <div style="background-color: #393F4A;" class="p-5">
-    <p class="text-center latestTitle border-bottom">- - - Latest photos - - -</p>
-    <div class="d-flex justify-content-center p-3">
-      <div class="m-0 p-0 d-flex justify-content-center ">
-        <div class="card" style="width:74%; border: 1px solid #393F4A; border-radius: 10px; background-color: #393F4A;">
-          <img style="border-radius: 5px;" class="card-img-top d-flex align-self-center" src="images/photos/CJ5A3202.JPG" alt="Card image cap">
-        </div>
-      </div>
-      <div class="m-0 p-0 d-flex justify-content-center ">
-        <div class="card" style="width:50%; border: 1px solid #393F4A; border-radius: 10px;">
-          <img style="border-radius: 5px;" class="card-img-top" src="images/photos/CJ5A2255.JPG" alt="Card image cap">
-        </div>
-      </div>
-      <div class="m-0 p-0 d-flex justify-content-center ">
-        <div class="card" style="width:74%; border: 1px solid #393F4A; border-radius: 10px; background-color: #393F4A;">
-          <img style="border-radius: 5px;" class="card-img-top d-flex align-self-center" src="images/photos/CJ5A3389.PNG" alt="Card image cap">
-        </div>
+  </div>
+</section>
+
+<p class="text-center" style="font-family: Jura;">Press the images to get a closer look</p>
+
+<!-- Category Grid -->
+<div class="container my-5">
+  <div class="row border-bottom mb-4">
+    <div class="col"><p class="categoryName">Animals</p></div>
+  </div>
+
+  <div class="row g-4">
+  
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card h-100">
+        <img src="images/photos/CJ5A1743.JPG" class="card-img-top expandable-img" alt="">
+      <div class="card-body">
+        <p class="card-text">
+          <strong>Canon EOS R7</strong><br>214 mm<br>ISO 1250<br>1/100s<br>F7.1
+        </p>
       </div>
     </div>
   </div>
 
-  <div class="d-flex justify-content-start m-5 border-bottom">
-    <p class="categoryName">Animals</p>
-  </div>
-  <div class="d-flex justify-content-around m-3 flex-wrap">
-    <div class="card" style="width: 20%;">
-      <img class="card-img-top photo" src="images/photos/CJ5A3202.JPG" alt="Card image cap">
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+    <div class="card h-100">
+      <img src="images/photos/CJ5A3202.JPG" class="card-img-top expandable-img" alt="">
       <div class="card-body">
         <p class="card-text">
-          <strong>Canon EOS R7</strong>
-          <br />
-          141 mm
-          <br />
-          ISO 200
-          <br />
-          1/640s
-          <br />
-          F6.3
-        </p>
-      </div>
-    </div>
-    <div class="card">
-      <img class="card-img-top photo" src="images/photos/CJ5A2255.JPG" alt="Card image cap">
-      <div class="card-body">
-        <p class="card-text">
-          <strong>Canon EOS R7</strong>
-          <br />
-          150 mm
-          <br />
-          ISO 6400
-          <br />
-          1/125s
-          <br />
-          F6.3
-        </p>
-      </div>
-    </div>
-    <div class="card" style="width: 20%;">
-      <img class="card-img-top photo" src="images/photos/CJ5A1303.JPG" alt="Card image cap">
-      <div class="card-body">
-        <p class="card-text">
-          <strong>Canon EOS R7</strong>
-          <br />
-          400 mm
-          <br />
-          ISO 4000
-          <br />
-          1/1000s
-          <br />
-          F9.0
-        </p>
-      </div>
-    </div>
-    <div class="card" style="width: 20%;">
-      <img class="card-img-top photo" src="images/photos/CJ5A3376.PNG" alt="Card image cap">
-      <div class="card-body">
-        <p class="card-text">
-          <strong>Canon EOS R7</strong>
-          <br />
-          400 mm
-          <br />
-          ISO 2500
-          <br />
-          1/1000s
-          <br />
-          F9.0
-        </p>
-      </div>
-    </div>
-    <div class="card" style="width: 20%;">
-      <img class="card-img-top photo" src="images/photos/CJ5A3389.PNG" alt="Card image cap">
-      <div class="card-body">
-        <p class="card-text">
-          <strong>Canon EOS R7</strong>
-          <br />
-          400 mm
-          <br />
-          ISO 400
-          <br />
-          1/1250s
-          <br />
-          F9.0
-        </p>
-      </div>
-    </div>
-    <div class="card" style="width: 20%;">
-      <img class="card-img-top photo" src="images/photos/CJ5A2818.PNG" alt="Card image cap">
-      <div class="card-body">
-        <p class="card-text">
-          <strong>Canon EOS R7</strong>
-          <br />
-          400 mm
-          <br />
-          ISO 800
-          <br />
-          1/1250s
-          <br />
-          F8.0
-        </p>
-      </div>
-    </div>
-    <div class="card">
-      <img class="card-img-top photo" src="images/photos/CJ5A2529.PNG" alt="Card image cap">
-      <div class="card-body">
-        <p class="card-text">
-          <strong>Canon EOS R7</strong>
-          <br />
-          225 mm
-          <br />
-          ISO 1600
-          <br />
-          1/1000s
-          <br />
-          F7.1
-        </p>
-      </div>
-    </div>
-    <div class="card">
-      <img class="card-img-top photo" src="images/photos/CJ5A2471.PNG" alt="Card image cap">
-      <div class="card-body">
-        <p class="card-text">
-          <strong>Canon EOS R7</strong>
-          <br />
-          400 mm
-          <br />
-          ISO 800
-          <br />
-          1/1250s
-          <br />
-          F8.0
+          <strong>Canon EOS R7</strong><br>141 mm<br>ISO 200<br>1/640s<br>F6.3
         </p>
       </div>
     </div>
   </div>
+
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+    <div class="card h-100">
+      <img src="images/photos/CJ5A2255.JPG" class="card-img-top expandable-img" alt="">
+      <div class="card-body">
+        <p class="card-text">
+          <strong>Canon EOS R7</strong><br>85 mm<br>ISO 400<br>1/500s<br>F5.6
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+    <div class="card h-100">
+      <img src="images/photos/CJ5A3389.PNG" class="card-img-top expandable-img" alt="">
+      <div class="card-body">
+        <p class="card-text">
+          <strong>Canon EOS R7</strong><br>200 mm<br>ISO 320<br>1/800s<br>F6.3
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+    <div class="card h-100">
+      <img src="images/photos/CJ5A1303.JPG" class="card-img-top expandable-img" alt="">
+      <div class="card-body">
+        <p class="card-text">
+          <strong>Canon EOS R7</strong><br>400 mm<br>ISO 4000<br>1/1000s<br>F9.0
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+    <div class="card h-100">
+      <img src="images/photos/CJ5A3376.PNG" class="card-img-top expandable-img" alt="">
+      <div class="card-body">
+        <p class="card-text">
+          <strong>Canon EOS R7</strong><br>400 mm<br>ISO 2500<br>1/1000s<br>F9.0
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+    <div class="card h-100">
+      <img src="images/photos/CJ5A2529.PNG" class="card-img-top expandable-img" alt="">
+      <div class="card-body">
+        <p class="card-text">
+          <strong>Canon EOS R7</strong><br>225 mm<br>ISO 1600<br>1/1000s<br>F7.1
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+    <div class="card h-100">
+      <img src="images/photos/CJ5A2471.PNG" class="card-img-top expandable-img" alt="">
+      <div class="card-body">
+        <p class="card-text">
+          <strong>Canon EOS R7</strong><br>400 mm<br>ISO 800<br>1/1000s<br>F8.0
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+    <div class="card h-100">
+      <img src="images/photos/CJ5A2818.PNG" class="card-img-top expandable-img" alt="">
+      <div class="card-body">
+        <p class="card-text">
+          <strong>Canon EOS R7</strong><br>400 mm<br>ISO 1250<br>1/1000s<br>F9.0
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Fullscreen image overlay -->
+<div id="imgOverlay" class="img-overlay">
+  <span class="close-btn">&times;</span>
+  <img id="overlayImg" src="" alt="Expanded view">
+</div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>version 2.1   &copy; 2025 - BuzzerBee´s Collection</p>
+  </footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-<div class="d-flex flex-row justify-content-around align-items-center p-2 m-0 border-top">
-    <p style="color: #393F4A;  font-size: 0.7vw;" class="nav-menu-item mb-0">&copy; 2025 - BuzzerBee´s Collection </p>
-    <p style="color: #393F4A; font-weight:bold;" class="nav-menu-item mb-0 connectText">
-      Connect with me:
-      <a href="https://www.linkedin.com/in/maria-edstr%C3%B6m-6b2215178/"><img class="connectIcon" src="images/icons/linkedin.png" /></a>
-      <a href="https://www.instagram.com/studio_buzzer?igsh=d2F6cHE4NDdnMW5n"><img class="connectIcon" src="images/icons/instagram.png" /></a>
-      <a href="https://github.com/Bumbleebeezz"><img class="connectIcon" src="images/icons/github.png" /></a>
-    </p>
-  </div>
-</html></div>
+</html>
+
+
+<script>
+  // Open overlay when image is clicked
+  document.querySelectorAll(".expandable-img").forEach(img => {
+    img.addEventListener("click", () => {
+      const overlay = document.getElementById("imgOverlay");
+      const overlayImg = document.getElementById("overlayImg");
+      overlayImg.src = img.src;
+      overlay.style.display = "flex";
+    });
+  });
+
+  // Close overlay on click of the close button or background
+  document.querySelector(".close-btn").addEventListener("click", () => {
+    document.getElementById("imgOverlay").style.display = "none";
+  });
+
+  document.getElementById("imgOverlay").addEventListener("click", (e) => {
+    if (e.target.id === "imgOverlay") {
+      e.currentTarget.style.display = "none";
+    }
+  });
+
+</script>

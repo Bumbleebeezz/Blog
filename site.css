@@ -18,23 +18,6 @@ strong {
   padding-right: 1em;
 }
 
-.aboutMeDiv {
-  padding-top: 7vh;
-  padding-left: 20vw;
-  padding-right: 20vw;
-  background-color: #393F4A;
-  align-items: end;
-  max-height: 780px;
-}
-
-.apologyText {
-  font-family: "Jura", system-ui;
-  font-size: 0.7vw;
-  background-color: #ea2b1f;
-  border-radius: 10px;
-  color: white;
-}
-
 .brand {
   color: white;
   font-size: 1.1vw;
@@ -66,7 +49,7 @@ strong {
   color: #393F4A;
 }
 .connectIcon {
-  width: 1.5vw;
+  width: 1.7rem;
   margin-left: 1em;
   transition: all 0.2s ease-in-out;
   border-radius: 50%;
@@ -121,24 +104,9 @@ strong {
   padding-bottom: 4vw;
 }
 
-.mainBody {
-  padding: 2vw;
-  padding-top: 2vw;
-  padding-bottom: 2vw;
-}
 
-.mainHeaderText {
-  align-self: center;
-  padding-top: 2vw;
-  padding-bottom: 2vw;
-}
 
-.mainNavText {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5vw;
-}
+
 
 
 .navLink {
@@ -170,48 +138,6 @@ strong {
   box-shadow: 0 0 50px;
 }
 
-.newsDiv {
-  background-color: #393F4A;
-}
-
-.newsTitle {
-  font-size: 2vw;
-  padding-left: 15vw;
-  padding-top: 0;
-  padding-bottom: 0;
-  margin-top: 2em;
-  font-weight: bold;
-  background-color: #D27D2D;
-  color: #393F4A;
-}
-
-.newsPostTitle {
-  margin: 0;
-  margin-left: 1.6vw;
-  font-size: 1.3vw;
-  font-weight: bold;
-}
-
-.newsText {
-  margin-left: 2vw;
-  padding-right: 15vw;
-  font-size: 1vw;
-}
-
-.newsPost {
-  margin: 0;
-  margin-left: 15vw;
-  font-size: 1.5vw;
-  padding-top: 1vw;
-  padding-bottom: 1vw;
-}
-
-.newsImg {
-  width: 12vw;
-  height: 12vw;
-  border-radius: 1vw;
-  margin: 0.7vw;
-}
 
 .profilHalfImg {
   width: 12vw;
